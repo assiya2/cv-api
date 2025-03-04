@@ -45,7 +45,7 @@ console.log('Routes configurées pour /api/users');
 
 require('dotenv').config();  // Charge les variables d'environnement
 
-const mongoURI = process.env.MONGO_URI || 'mongodb://mongo:VRejDTZtIqhMNUnuJoAlEqYAeELHURki@shuttle.proxy.rlwy.net:28774/cv-app';
+const mongoURI = process.env.MONGO_URI || 'mongodb://mongo:VRejDTZtIqhMNUnuJoAlEqYAeELHURki@shuttle.proxy.rlwy.net:28774';
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
