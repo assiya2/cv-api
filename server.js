@@ -8,6 +8,7 @@ const app = express();
 const path = require('path');
 const nodemailer = require('nodemailer');
 const multer = require('multer');
+require('dotenv').config();
 
 
 app.use('/uploads/pdfs', express.static(path.join(__dirname, 'uploads','pdfs')));
@@ -43,9 +44,9 @@ app.use('/api/users', authRoutes);  // Route pour la gestion des utilisateurs (i
 console.log('Routes configurées pour /api/users');
 
 // Connexion à MongoDB
-mongoose.connect('mongodb://localhost:27017/cv-app', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Connecté à MongoDB'))
-  .catch(err => console.log('Erreur de connexion à MongoDB :', err));
+mongoose.connect(process.env.MONGO_URI , { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('✅ Connecté à MongoDB'))
+  .catch(err => console.log('❌ Erreur de connexion à MongoDB :', err));
 
  
   
