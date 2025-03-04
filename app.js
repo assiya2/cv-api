@@ -42,7 +42,7 @@ app.use(express.json());
 app.use('/api/users', authRoutes);  // Route pour la gestion des utilisateurs (inscription, connexion)
 
 console.log('Routes configurées pour /api/users');
-const mongoose = require('mongoose');
+
 require('dotenv').config();  // Charge les variables d'environnement
 
 const mongoURI = process.env.MONGO_URI || 'mongodb://mongo:VRejDTZtIqhMNUnuJoAlEqYAeELHURki@shuttle.proxy.rlwy.net:28774/cv-app';
