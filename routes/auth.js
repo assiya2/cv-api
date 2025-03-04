@@ -6,7 +6,7 @@ const { User, CV } = require('../models/User');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
-const axios = require('axios');
+
 const { fileURLToPath } = require('url');
 
 const router = express.Router(); // Utilisation correcte de express.Router()

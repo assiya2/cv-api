@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.7",
-    "axios": "^0.24.0",
     "express": "^4.17.1"
   }
 }
