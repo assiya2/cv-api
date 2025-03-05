@@ -11,7 +11,7 @@ const multer = require('multer');
 require('dotenv').config();
 
 
-app.use('/uploads/pdfs', express.static(path.join(__dirname, 'uploads','pdfs')));
+
 
 
 
@@ -23,22 +23,17 @@ app.use('/uploads/pdfs', express.static(path.join(__dirname, 'uploads','pdfs')))
 // Configuration du serveur
 const PORT = process.env.PORT || 3000; // Utilisation du port défini dans les variables d'environnement ou par défaut 5000
 
-// Middleware CORS
-// Configuration de CORS
-
 const corsOptions = {
-  origin: ['https://celadon-beijinho-e9e946.netlify.app', 'cvs-app.netlify.app'],
+  origin: ['https://celadon-beijinho-e9e946.netlify.app', 'https://cvs-app.netlify.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 };
 
-app.use(cors(corsOptions));
-// Middleware pour analyser le corps des requêtes JSON
+app.use(cors(corsOptions)); 
 app.use(express.json());
 
-// Middleware pour servir les fichiers statiques (dossier uploads)lyser le corps des requêtes
-
-
+app.use('/uploads/pdfs', express.static(path.join(__dirname, 'uploads','pdfs')));
 
 
 // Utilisation des routes d'authentification
@@ -52,10 +47,10 @@ const mongoURI = process.env.MONGO_URI || 'mongodb://mongo:VRejDTZtIqhMNUnuJoAlE
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    console.log('✅ Connecté à MongoDB');
+    console.log('Connecté à MongoDB');
   })
   .catch((err) => {
-    console.log('❌ Erreur de connexion à MongoDB :', err);
+    console.log(' Erreur de connexion à MongoDB :', err);
   });
  
   
