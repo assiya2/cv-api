@@ -20,7 +20,7 @@ app.use('/uploads/pdfs', express.static(path.join(__dirname, 'uploads','pdfs')))
 
 
 // Configuration du serveur
-const PORT = process.env.PORT || 5000; // Utilisation du port défini dans les variables d'environnement ou par défaut 5000
+const PORT = process.env.PORT || 8080; // Utilisation du port défini dans les variables d'environnement ou par défaut 5000
 
 // Middleware CORS
 // Configuration de CORS
@@ -93,7 +93,7 @@ app.post('/send-email', (req, res) => {
 });
 // Démarrer le serveur
 app.listen(PORT, () => {
-  console.log(`Serveur démarré sur http://localhost:${PORT}`);
+  console.log(`Serveur démarré sur le port ${PORT}`);
 });
 
 
