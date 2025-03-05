@@ -14,9 +14,7 @@ require('dotenv').config();
 app.use('/uploads/pdfs', express.static(path.join(__dirname, 'uploads','pdfs')));
 
 
-app.get("/", (req, res) => {
-  res.send("Bienvenue sur l'API !");
-});
+
 
 
 
