@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 3000; // Utilisation du port défini dans les v
 // Middleware CORS
 // Configuration de CORS
 app.use(cors({
-  origin: 'http://localhost:4200',  // Autorise les requêtes depuis Angular
+  origin: 'cvs-app.netlify.app',  // Autorise les requêtes depuis Angular
   methods: 'GET,POST,PUT,DELETE',  // Autorise ces méthodes HTTP
   allowedHeaders: 'Content-Type,Authorization',  // Autorise ces en-têtes
 }));
