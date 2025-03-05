@@ -25,12 +25,14 @@ const PORT = process.env.PORT || 3000; // Utilisation du port défini dans les v
 
 // Middleware CORS
 // Configuration de CORS
-app.use(cors({
-  origin: 'cvs-app.netlify.app',  // Autorise les requêtes depuis Angular
-  methods: 'GET,POST,PUT,DELETE',  // Autorise ces méthodes HTTP
-  allowedHeaders: 'Content-Type,Authorization',  // Autorise ces en-têtes
-}));
 
+const corsOptions = {
+  origin: ['https://celadon-beijinho-e9e946.netlify.app', 'cvs-app.netlify.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
+app.use(cors(corsOptions));
 // Middleware pour analyser le corps des requêtes JSON
 app.use(express.json());
 
